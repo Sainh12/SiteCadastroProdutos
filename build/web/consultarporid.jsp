@@ -3,7 +3,7 @@
     Created on : 28 de mai. de 2026, 22:30:45
     Author     : saimo
 --%>
-<%@page import = "model.Produtos"%>
+<%@page import="model.Produtos"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,7 +13,7 @@
         <link rel="stylesheet" href ="style.css">
     </head>
     <body>
-        <%Produtos p = (Produtos) request.getAttribute("p");%>
+        <h1>Produto Encontrado</h1>
         <table class ="tabela">
             <tr>
                 <th>ID</th>
@@ -29,6 +29,9 @@
                 <th>Remover</th>
                 <th>Editar</th>
             </tr>
+            <%
+            Produtos p = (Produtos) request.getAttribute("p");
+            %>
             <tr>
                 <td><%out.print(p.getId());%></td>
                 <td><%out.print(p.getNome());%></td>
@@ -43,10 +46,13 @@
                 <td align="center"><a href="controller?op=DELETAR&txtid=<%out.print(p.getId());%>" <div>Delet</div></a></td>
                 <td align="center"><a href="controller?op=ATUALIZAR&txtid=<%out.print(p.getId());%>"<div>Update</div></a></td>
             </tr>
-            <%}%>
-            <button class="btn salvar" align = "center" name ="op" value ="VOLTAR">
-                Voltar
-            </button>
         </table>
+        <div class="btvoltar">
+            <a href="index.html">
+                <button class="btn voltar" name ="op" value ="VOLTAR">
+                    Voltar
+                </button>
+            </a>
+        </div>
     </body>
 </html>

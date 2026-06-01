@@ -17,8 +17,12 @@
             String msg = (String) request.getAttribute("message");
             %>
             <h1><%out.println(msg);%>realizado com sucesso</h1>
-            <button class="btn salvar" align ="center" name ="op" value ="VOLTAR">
-                Voltar
-            </button>
+            <div class="btvoltar">
+                <a href="index.html">
+                    <button class="btn voltar" name ="op" value ="VOLTAR">
+                        Voltar
+                    </button>
+                </a>
+            </div>
     </body>
 </html>

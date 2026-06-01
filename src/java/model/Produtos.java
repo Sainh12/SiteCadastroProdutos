@@ -1,9 +1,9 @@
 package model;
-import java.time.LocalDateTime;
 
 import java.time.format.DateTimeFormatter;
 
 public class Produtos {
+
     private int id;
     private String nome;
     private String marca;
@@ -64,11 +64,12 @@ public class Produtos {
     }
 
     public String getDataCadastro() {
+        String data = dataCadastro.formatted(formatador);
         return dataCadastro;
     }
 
-    public void setDataCadastro(String dataCadastro) { 
-       this.dataCadastro = dataCadastro;
+    public void setDataCadastro(String dataCadastro) {
+        this.dataCadastro = dataCadastro;
     }
 
     public String getDescricao() {
@@ -95,5 +96,6 @@ public class Produtos {
         this.quantidade = quantidade;
     }
 
-    
+    DateTimeFormatter formatador = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
 }

@@ -8,6 +8,7 @@
 body{
     background-color: #f4f4f4;
     padding: 40px;
+    height: 100vh;
 }
 
 .container{
@@ -80,4 +81,44 @@ textarea{
 
 .consultar{
     background-color: blue;
+}
+
+.voltar{
+    background-color: graytext;
+
+}
+table{
+  display: block;
+  margin: auto;
+  width: 50%;
+  display: grid;
+  border-collapse: collapse;
+  text-align: center;
+  border-radius:8px;
+  border:none
+}
+th, td {
+  padding: 5px;
+  border: 1px solid lightgray;
+  padding-inline: 6px;
+}
+
+th {
+    background: lightskyblue;
+    
+}
+/*
+tr:nth-child(even){
+  background: wheat;
+}
+*/
+
+tr:nth-child(odd){
+    background: #ccc;
+}
+
+.btvoltar{
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
 }

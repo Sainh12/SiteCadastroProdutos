@@ -15,7 +15,7 @@ public class ProdutosDAO {
     //============================Comando SQL Insert======================
     public void cadastrar (Produtos prod) throws ClassNotFoundException,SQLException{
         Connection con = DBConnection.getConexão();
-        String SQL = "insert into produtos (nome,marca,categoria,preco,quantidade,cor,peso,descricao,dataCadastro) values (?,?,?,?,?,?,?,?,?)";
+        String SQL = "insert into produtos ( nome, marca, categoria,preco,quantidade,cor,peso,descricao,dataCadastro) values (?,?,?,?,?,?,?,?,?)";
         PreparedStatement comando = con.prepareStatement(SQL);
         comando.setString(1, prod.getNome());
         comando.setString(2, prod.getMarca());
@@ -69,7 +69,7 @@ public class ProdutosDAO {
         while (resultSet.next()){
             Produtos prod = new Produtos();
             prod.setId(resultSet.getInt("id"));
-            prod.setNome(resultSet.getString("descricao"));
+            prod.setNome(resultSet.getString("nome"));
             prod.setMarca(resultSet.getString("marca"));
             prod.setCategoria(resultSet.getString("categoria"));
             prod.setPreco(resultSet.getDouble("preco"));
@@ -93,7 +93,7 @@ public class ProdutosDAO {
         Produtos p = new Produtos();
         if (resultSet.next()){
             p.setId(resultSet.getInt("id"));
-            p.setNome(resultSet.getString("descricao"));
+            p.setNome(resultSet.getString("nome"));
             p.setMarca(resultSet.getString("marca"));
             p.setCategoria(resultSet.getString("categoria"));
             p.setPreco(resultSet.getDouble("preco"));

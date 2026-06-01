@@ -52,8 +52,13 @@
             <%}%>
             
         </table>
-            <button class="btn salvar" align = "center" name ="op" value ="VOLTAR">
-                Voltar
-            </button>
+            
+            <div class="btvoltar">
+                <a href="index.html">
+                    <button class="btn voltar" name ="op" value ="VOLTAR">
+                        Voltar
+                    </button>
+                </a>
+            </div>
     </body>
 </html>
